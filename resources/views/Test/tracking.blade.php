@@ -109,7 +109,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     <div class="fluid_height_spacer"></div>
    </div>
    <div id="myDiagramContainer">
-      <div id="myDiagramBuilder" style="height:100px;width:1200px;float:right;margin: 80px 0 0 0"></div>
+      <div id="myDiagramBuilder" style="height:100px;width:1000px;float:right;margin: 80px 20px 200px 0"></div>
   </div>
   </div>
   <!-- Other scripts -->
