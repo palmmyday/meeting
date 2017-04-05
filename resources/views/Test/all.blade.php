@@ -16,8 +16,8 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   
   <title>All</title>
   <!-- CSS -->
-  <link rel="stylesheet" type="text/css" href="css/site_global.css?crc=443350757"/>
-  <link rel="stylesheet" type="text/css" href="css/all.css?crc=4225037467" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="{{asset('css/site_global.css?crc=443350757/')}}"/>
+  <link rel="stylesheet" type="text/css" href="{{asset('css/all.css?crc=4225037467')}}" id="pagesheet"/>
   <script src="http://cdn.alloyui.com/3.0.1/aui/aui-min.js"></script>
   <link href="http://cdn.alloyui.com/3.0.1/aui-css/css/bootstrap.min.css" rel="stylesheet"></link>
    </head>
