@@ -66,3 +66,13 @@ Route::get('/PALM/test2' , function(){
 Route::get('/PALM/todo', function() {
 	return view('Test.task-to-do');
 });
+
+Route::get('check-connect',function(){
+ if(DB::connection()->getDatabaseName())
+ {
+ return "Yes! successfully connected to the DB: " . DB::connection()->getDatabaseName();
+ }else{
+ return 'Connection False !!';
+ }
+ 
+});
