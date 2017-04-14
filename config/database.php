@@ -54,10 +54,10 @@ return [
 
 		'mysql' => [
 			'driver'    => 'mysql',
-			'host'      => env('DB_HOST', '10.4.56.27'),
-			'database'  => env('DB_DATABASE', 'm&m'),
-			'username'  => env('DB_USERNAME', 'root'),
-			'password'  => env('DB_PASSWORD', ' '),
+			'host'      => env('DB_HOST', 'my57db-pj.sit.kmutt.ac.th'),
+			'database'  => env('DB_DATABASE', 'Meet_and_Management_db'),
+			'username'  => env('DB_USERNAME', 'i353259012'),
+			'password'  => env('DB_PASSWORD', 'SE=ruge4esW!'),
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
