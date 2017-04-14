@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', 'MyController@index');
+Route::get('/', 'MyControllers@index');
 
-Route::get('home', 'MyController@index');
+Route::get('home', 'Mycontrollers@index');
 
 Route::get('done', 'MyControllers@done');
 
