@@ -14,6 +14,7 @@ class CreateConclusionHasPersonTable extends Migration {
 	{
 		Schema::create('conclusion_has_person', function(Blueprint $table)
 		{
+
 			$table->increments('id');
 			$table->timestamps();
 		});

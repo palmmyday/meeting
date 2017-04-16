@@ -14,11 +14,11 @@ class CreateAgendatypeTable extends Migration {
 	{
 		Schema::create('agendatype', function(Blueprint $table)
 		{
-			$table->increments('id');
-			$table->integer('agendaTypeId');
+
+			$table->increments('agendaTypeId');
 		    $table->string('agendaTypeName', 45);
 		    
-		    $table->primary('agendaTypeId');
+
 			$table->timestamps();
 		});
 	}

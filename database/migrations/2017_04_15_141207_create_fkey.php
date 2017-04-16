@@ -45,7 +45,7 @@ class CreateFkey extends Migration {
 			$table->foreign('Agenda_agendaId')->references('agendaId')->on('agenda');
 		});
 
-		Schema::table('conclusion_has_person',function(){
+		Schema::table('conclusion_has_person',function($table){
 			$table->integer('conclusion_conclusionId')->unsigned();
 			$table->foreign('conclusion_conclusionId')->references('conclusionId')->on('conclusion');
 
@@ -59,7 +59,7 @@ class CreateFkey extends Migration {
 			$table->foreign('Person_personId')->references('personId')->on('person');
 		});
 
-		Schema::table('agenda_has_agendatype',function(){
+		Schema::table('agenda_has_agendatype',function($table){
 			$table->integer('Agenda_agendaId')->unsigned();
 			$table->foreign('Agenda_agendaId')->references('agendaId')->on('agenda');
 
@@ -67,7 +67,7 @@ class CreateFkey extends Migration {
 			$table->foreign('agendaType_agendaTypeId')->references('agendaTypeId')->on('agendatype');
 		});
 
-		Schema::table('tracking',function(){
+		Schema::table('tracking',function($table){
 			$table->integer('conclusion_conclusionId')->unsigned();
 			$table->foreign('conclusion_conclusionId')->references('conclusionId')->on('conclusion');
 

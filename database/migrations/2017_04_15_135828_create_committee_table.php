@@ -14,11 +14,10 @@ class CreateCommitteeTable extends Migration {
 	{
 		Schema::create('committee', function(Blueprint $table)
 		{
-			$table->increments('id');
-			$table->integer('committeeId');
+
+			$table->increments('committeeId');
 		    $table->string('committeeName', 100)->default(null);
-		    
-		    $table->primary('committeeId');
+
 			$table->timestamps();
 		});
 	}

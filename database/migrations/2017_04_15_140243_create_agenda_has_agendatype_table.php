@@ -14,6 +14,7 @@ class CreateAgendaHasAgendatypeTable extends Migration {
 	{
 		Schema::create('agenda_has_agendatype', function(Blueprint $table)
 		{
+
 			$table->increments('id');
 			$table->timestamps();
 		});

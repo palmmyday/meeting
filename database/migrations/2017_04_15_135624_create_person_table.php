@@ -14,8 +14,8 @@ class CreatePersonTable extends Migration {
 	{
 		Schema::create('person', function(Blueprint $table)
 		{
-			$table->increments('id');
-			$table->integer('personId');
+
+			$table->increments('personId');
 		    $table->string('personFirstName', 45);
 		    $table->string('personLastName', 45);
 		    $table->string('password', 45);
@@ -23,7 +23,7 @@ class CreatePersonTable extends Migration {
 		    $table->string('personTel', 45);
 		    $table->string('personPicture', 200);
 		    
-		    $table->primary('personId');
+		    
 		
 			$table->timestamps();
 		});

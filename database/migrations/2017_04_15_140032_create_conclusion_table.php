@@ -14,14 +14,13 @@ class CreateConclusionTable extends Migration {
 	{
 		Schema::create('conclusion', function(Blueprint $table)
 		{
-			$table->increments('id');
-			$table->integer('conclusionId');
+
+			$table->increments('conclusionId');
 		    $table->string('conclusioncontent', 5000)->default(null);
 			$table->string('type', 45)->default(null);
 		    $table->string('status', 45)->default(null);
 		    $table->time('timeNextMeeting')->default(null);
-			
-			$table->primary('conclusionId');
+
 			$table->timestamps();
 
 		});

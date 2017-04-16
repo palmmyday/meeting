@@ -14,16 +14,15 @@ class CreateTrackingTable extends Migration {
 	{
 		Schema::create('tracking', function(Blueprint $table)
 		{
-			$table->increments('id');
-			$table->integer('trackingId');
+
+			$table->increments('trackingId');
 		    $table->string('trackingTopic', 100)->default(null);
 		    $table->dateTime('trackingDeadline');
 		    $table->string('trackingSender', 45);
 		    $table->string('trackingReceiver', 45);
 		    $table->dateTime('TrackingDateAccept');
 		    $table->string('TrackingDescription', 4500);
-			
-			$table->primary('trackingId');
+
 			$table->timestamps();
 		});
 	}

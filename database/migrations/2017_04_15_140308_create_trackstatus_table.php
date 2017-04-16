@@ -14,11 +14,10 @@ class CreateTrackstatusTable extends Migration {
 	{
 		Schema::create('trackstatus', function(Blueprint $table)
 		{
-			$table->increments('id');
-			$table->integer('trackStatusId');
+
+			$table->increments('trackStatusId');
 		    $table->string('trackStatusName', 45);
-		    
-		    $table->primary('trackStatusId');
+
 			$table->timestamps();
 		});
 	}
