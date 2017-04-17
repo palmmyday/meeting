@@ -13,11 +13,11 @@
 
 Route::get('/', 'MyControllers@index');
 
-Route::get('home', 'Mycontrollers@index');
+Route::get('home', 'MyControllers@index');
 
 Route::get('done', 'MyControllers@done');
 
-Route::get('doing', 'Mycontrollers@doing');
+Route::get('doing', 'MyControllers@doing');
 
 Route::get('all', 'MyControllers@all');
 
