@@ -6,6 +6,13 @@
   <meta name="generator" content="2017.0.1.363"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   
+   <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        
+
   <script type="text/javascript">
    // Update the 'nojs'/'js' class on the html node
 document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
@@ -39,7 +46,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
      </div>
      <form class="form-grp clearfix grpelem" id="widgetu5573" method="post" enctype="multipart/form-data" action="scripts/form-u5573.php"><!-- none box -->
       <div class="fld-grp clearfix grpelem" id="widgetu5574" data-required="true"><!-- none box -->
-       <span class="fld-input NoWrap actAsDiv clearfix grpelem" id="u5577-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu5574_input" name="custom_U5574" tabindex="1"/><label class="wrapped-input fld-prompt" id="widgetu5574_prompt" for="widgetu5574_input"><span class="actAsPara">Search</span></label></span>
+       <span class="fld-input NoWrap actAsDiv clearfix grpelem" id="u5577-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu5574_input" name="custom_U5574" tabindex="1"/></span>
       </div>
       <div class="clearfix grpelem" id="u5578-4"><!-- content -->
        <p>กำลังส่งแบบฟอร์ม...</p>
@@ -56,10 +63,12 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
        </div>
       </button>
      </form>
+     <br>
      <a class="nonblock nontext Button rounded-corners clearfix grpelem" id="buttonu5586" href="/all"><!-- container box --><div class="clearfix grpelem" id="u5587-4"><!-- content --><p>ALL</p></div></a>
      <a class="nonblock nontext Button ButtonSelected rounded-corners clearfix grpelem" id="buttonu5588" href="/doing"><!-- container box --><div class="clearfix grpelem" id="u5589-4"><!-- content --><p>Doing</p></div></a>
      <a class="nonblock nontext Button rounded-corners clearfix grpelem" id="buttonu5590" href="/to-do"><!-- container box --><div class="clearfix grpelem" id="u5591-4"><!-- content --><p>To Do</p></div></a>
      <a class="nonblock nontext Button rounded-corners clearfix grpelem" id="buttonu5592" href="/done"><!-- container box --><div class="clearfix grpelem" id="u5593-4"><!-- content --><p>Done</p></div></a>
+     <br>
      <div class="clearfix grpelem" id="u5942"><!-- group -->
       <div class="pointer_cursor clearfix grpelem" id="u5943"><!-- group -->
        <a class="block" href="task-doing.html"><!-- Block link tag --></a>
@@ -67,6 +76,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
       </div>
      </div>
     </div>
+
    </div>
    <div class="clearfix grpelem" id="pu5594"><!-- group -->
     <div class="clearfix grpelem" id="u5594"><!-- group -->
@@ -95,9 +105,36 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     <div class="clearfix grpelem" id="u5620"><!-- group -->
      <a class="nonblock nontext rounded-corners clip_frame grpelem" id="u5621" href="/user"><!-- image --><img class="block" id="u5621_img" src="images/pasted%20image%20500x500-crop-u5621.jpg?crc=136723755" alt="" data-image-width="24" data-image-height="22"/></a>
     </div>
+     <main style="height:100px;width:1000px;float:right;margin: 40% 0% 50% 40%">
+       <div class="container">
+        <div class='row'>
+          <h3>FORM DOING CONTENT</h3>
+          <br>
+          <table class="table table-striped">
+           
+            <tr>
+                <th>
+                    TASK NUM
+                </th>
+                <th>
+                    STATUS
+                </th>
+                <th>
+                    PERSON-SENDER
+                </th>
+            </tr>
+            
+        </table>
+        </div>
+        </div>  
+       
+   
+     </main>
    </div>
+   
    <div class="grpelem" id="u5568"><!-- simple frame --></div>
   </div>
+ 
   <!-- Other scripts -->
   <script type="text/javascript">
    window.Muse.assets.check=function(d){if(!window.Muse.assets.checked){window.Muse.assets.checked=!0;var b={},c=function(a,b){if(window.getComputedStyle){var c=window.getComputedStyle(a,null);return c&&c.getPropertyValue(b)||c&&c[b]||""}if(document.documentElement.currentStyle)return(c=a.currentStyle)&&c[b]||a.style&&a.style[b]||"";return""},a=function(a){if(a.match(/^rgb/))return a=a.replace(/\s+/g,"").match(/([\d\,]+)/gi)[0].split(","),(parseInt(a[0])<<16)+(parseInt(a[1])<<8)+parseInt(a[2]);if(a.match(/^\#/))return parseInt(a.substr(1),
@@ -117,4 +154,5 @@ Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
   <!-- RequireJS script -->
   <script src="scripts/require.js?crc=4159430777" type="text/javascript" async data-main="scripts/museconfig.js?crc=172512987" onload="if (requirejs) requirejs.onError = function(requireType, requireModule) { if (requireType && requireType.toString && requireType.toString().indexOf && 0 <= requireType.toString().indexOf('#scripterror')) window.Muse.assets.check(); }" onerror="window.Muse.assets.check();"></script>
    </body>
+
 </html>

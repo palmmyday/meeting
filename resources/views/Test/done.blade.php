@@ -6,6 +6,12 @@
   <meta name="generator" content="2017.0.1.363"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   
+  <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        
   <script type="text/javascript">
    // Update the 'nojs'/'js' class on the html node
 document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
@@ -39,7 +45,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
      </div>
      <form class="form-grp clearfix grpelem" id="widgetu5393" method="post" enctype="multipart/form-data" action="scripts/form-u5393.php"><!-- none box -->
       <div class="fld-grp clearfix grpelem" id="widgetu5394" data-required="true"><!-- none box -->
-       <span class="fld-input NoWrap actAsDiv clearfix grpelem" id="u5397-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu5394_input" name="custom_U5394" tabindex="1"/><label class="wrapped-input fld-prompt" id="widgetu5394_prompt" for="widgetu5394_input"><span class="actAsPara">Search</span></label></span>
+       <span class="fld-input NoWrap actAsDiv clearfix grpelem" id="u5397-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu5394_input" name="custom_U5394" tabindex="1"/></span>
       </div>
       <div class="clearfix grpelem" id="u5398-4"><!-- content -->
        <p>กำลังส่งแบบฟอร์ม...</p>
@@ -95,6 +101,30 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     <div class="clearfix grpelem" id="u5440"><!-- group -->
      <a class="nonblock nontext rounded-corners clip_frame grpelem" id="u5441" href="/user"><!-- image --><img class="block" id="u5441_img" src="images/pasted%20image%20500x500-crop-u5441.jpg?crc=136723755" alt="" data-image-width="24" data-image-height="22"/></a>
     </div>
+
+    <main style="height:100px;width:1000px;float:right;margin: 40% 0% 50% 40%">
+       <div class="container">
+        <div class='row'>
+          <h3>FORM DOING CONTENT</h3>
+          <br>
+          <table class="table table-striped">
+           
+            <tr>
+                <th>
+                    TASK NUM
+                </th>
+                <th>
+                    STATUS
+                </th>
+                <th>
+                    PERSON-SENDER
+                </th>
+            </tr>
+            
+        </table>
+        </div>
+        </div>  
+     </main>
    </div>
    <div class="grpelem" id="u5388"><!-- simple frame --></div>
   </div>
