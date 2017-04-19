@@ -37,7 +37,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
      </div>
      <form class="form-grp clearfix grpelem" id="widgetu3534" method="post" enctype="multipart/form-data" action="scripts/form-u3534.php"><!-- none box -->
       <div class="fld-grp clearfix grpelem" id="widgetu3543" data-required="true"><!-- none box -->
-       <span class="fld-input NoWrap actAsDiv clearfix grpelem" id="u3546-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu3543_input" name="custom_U3543" tabindex="1"/><label class="wrapped-input fld-prompt" id="widgetu3543_prompt" for="widgetu3543_input"><span class="actAsPara">Search</span></label></span>
+       <span class="fld-input NoWrap actAsDiv clearfix grpelem" id="u3546-4"><!-- content --><input class="wrapped-input" type="text" spellcheck="false" id="widgetu3543_input" name="custom_U3543" tabindex="1"/></span>
       </div>
       <div class="clearfix grpelem" id="u3542-4"><!-- content -->
        <p>กำลังส่งแบบฟอร์ม...</p>
