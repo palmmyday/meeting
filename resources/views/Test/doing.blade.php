@@ -123,16 +123,17 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
                     PERSON-SENDER
                 </th>
             </tr>
-            @foreach($jans as $j) 
+            
+            @foreach($jan as $j) 
             <tr>
                 <td>
                     {{$j->trackingTopic}}
                 </td>
                 <td>
-                    {{$Status}}
+                    {{$j->trackStatus_trackStatusId}}
                 </td>
                 <td>
-                    {{$j->member_person_personId}}
+                    {{$j->member_Person_personId_sender}}
                 </td>
             </tr>
             @endforeach

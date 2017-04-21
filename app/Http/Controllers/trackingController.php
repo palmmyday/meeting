@@ -1,26 +1,99 @@
-<?php 
-namespace App\Http\Controllers; //กำหนดที่อยู่ ของ Controller ที่เรียกใช้งาน
-use Input;
-use Redirect;
-use File;
-use DB;
-use Auth;
-use Illuminate\Http\Request;
+<?php namespace App\Http\Controllers;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\tracking;// กำหนดชื่อ ของ Model จากที่อยู่ของ Model ที่เราเรียกใช้งาน
+use App\tracking;
+use Illuminate\Http\Request;
 
 class trackingController extends Controller {
- public function show($trackingId){
-    $obj['trackingId'] = $trackingId;
-    $id = DB::table('tracking')->where('trackingId',$trackingId)->value('id');
-    $obj['checkId'] = $id;
-    $obj['trackingstatus'] = DB::table('tracking')->where('id',$id)->value('trackingstatus');
-    
-    $obj['detail'] = DB::table('tracking')
-                    ->where('trackingId',$id)->get();
-   
-    $tracking = tracking::get();
-    return $tracking ? 'Model tracking Connect Yes!' : 'Error! Model tracking Connect False!!!';
- }
+
+	/**
+	 * Display a listing of the resource.
+	 *โชว์บล๊อคทุกบล๊อค
+	 * @return Response
+	 */
+	public function index()
+	{
+		$objs = tracking::all();
+		$data['objs'] =$objs;
+		return view('Test.doing',$data);
+	}
+
+	/**
+	 * Show the form for creating a new resource.
+	 *โหลดฟอร์มมาโชว์
+	 * @return Response
+	 */
+	public function create()
+	{
+		//
+	}
+
+	/**
+	 * Store a newly created resource in storage.
+	 *insert ค่าต่างๆลงดีบี
+	 * @return Response
+	 */
+	public function store(Request $request)
+	{
+		$obj 			= new tracking();
+		$obj->trackingId = $request('trackingId');
+		$obj->topic 	= $request('trackingTopic');
+		$obj->sender 	=$request('member_Person_personId_sender');
+		$obj->trackStatus_trackStatusId=1;
+		$obj->save();
+		return redirect(url('/all'));
+	}
+
+	/**
+	 * Display the specified resource.
+	 *เข้าไปใน id ของโค๊ดนั้นๆ
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function show($id)
+	{
+		$obj = tracking::find($id);
+	}
+
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function edit($id)
+	{
+		$obj = tracking::find($id);
+		$obj-> topic = 'Hello world';
+		$obj->save();
+	}
+
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function update(Request $request,$trackingId)
+	{
+		$obj 			= tracking::find($trackingId);
+		$obj->topic 	= $request('Topic');
+		$obj->sender 	= $request('member_Person_personId_sender');
+		$obj->trackStatus_trackStatusId =1;
+		$obj->save();
+	}
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function destroy($trackingId)
+	{
+		$obj = tracking::find($trackingId);
+		$obj->delete();
+	}
+
 }

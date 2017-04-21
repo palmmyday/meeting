@@ -2,8 +2,9 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use app\doing;
+use App\tracking;
 use Illuminate\Http\Request;
+use DB;
 
 class DoingController extends Controller {
 
@@ -14,9 +15,12 @@ class DoingController extends Controller {
 	 */
 	public function index()
 	{
-		$objs = blog::all();
-		$data['objs'] =$objs;
-		return view('Test.doing',$data);
+		$obj 	=new Tracking();
+		$obj->trackingTopic 	= 'ABC';
+		$obj->trackingDeadline 	='2017-04-26 00:00:00';
+		$obj->TrackingDateAccept='2017-04-19 00:00:00';
+		$obj->TrackingDescription='ABuvbjernvgioewriv';
+		$obj->save();
 	}
 
 	/**
@@ -38,10 +42,11 @@ class DoingController extends Controller {
 	{
 		$obj 			= new tracking();
 		$obj->trackingId = $request('trackingId');
-		$obj->status 	= $request('trackstatus_trackstatusId');
-		$obj->sender 	=$request('member_person_personId_sender');
+		$obj->topic 	= $request('trackingTopic');
+		$obj->sender 	=$request('member_Person_personId_sender');
+		$obj->trackStatus_trackStatusId=1;
 		$obj->save();
-		return redirect(url('/blog'));
+		return redirect(url('/all'));
 	}
 
 	/**
@@ -50,9 +55,19 @@ class DoingController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show()
 	{
-		//
+		//$obj['trackingId']=$trackingId;
+		
+		//$id= DB::table('tracking')->value('trackStatus_trackStatusId');
+		
+        $jan=tracking::all();
+		//$jan['status'] = DB::table('trackstatus')->join('tracking','trackstatusId','=','trackStatus_trackStatusId')->where('trackStatusName','=','Doing')->get();
+     	//dd($jan);
+	  	//$data['Status']= DB::table('trackstatus')
+                    //	->join('tracking','trackstatus.id','=','trackStatus_trackStatusId')
+                    //	->select('trackStatusName')->get();
+		return view('Test.doing', compact('jan'));
 	}
 
 	/**
@@ -61,9 +76,11 @@ class DoingController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($trackingId)
 	{
-		//
+		$obj = tracking::find($trackingId);
+		$obj-> topic = 'Hello world';
+		$obj->save();
 	}
 
 	/**
@@ -72,9 +89,13 @@ class DoingController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Request $request,$trackingId)
 	{
-		//
+		$obj 			= tracking::find($trackingId);
+		$obj->topic 	= $request('Topic');
+		$obj->sender 	= $request('member_Person_personId_sender');
+		$obj->trackStatus_trackStatusId =1;
+		$obj->save();
 	}
 
 	/**
@@ -83,9 +104,10 @@ class DoingController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($trackingId)
 	{
-		//
+		$obj = tracking::find($trackingId);
+		$obj->delete();
 	}
 
 }

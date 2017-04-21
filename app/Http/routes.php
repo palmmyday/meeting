@@ -11,15 +11,19 @@
 |
 */
 
-Route::get('/', 'MyControllers@index');
+Route::get('/', 'MyController@index');
+
+Route::get('home', 'MyController@index');
+
+Route::get('done', 'MyControllers@done');
+
+Route::get('doing', 'DoingController@show');
 
 Route::get('home', 'MyControllers@index');
 
 Route::get('done', 'MyControllers@done');
 
-Route::get('doing', 'MyControllers@doing');
-
-Route::get('all', 'MyControllers@all');
+Route::get('all', 'Mycontrollers@all');
 
 Route::get('to-do', 'MyControllers@todo');
 
