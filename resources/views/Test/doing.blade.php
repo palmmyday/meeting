@@ -114,7 +114,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
            
             <tr>
                 <th>
-                    Topic
+                    TASK NAME
                 </th>
                 <th>
                     Status
@@ -122,9 +122,12 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
                 <th>
                     PERSON-SENDER
                 </th>
+                <th>
+                    Deadline
+                </th>
             </tr>
-            @if($jan != null)
-                @foreach($jan as $j) 
+            @if($tod != null)
+                @foreach($tod as $j) 
                 <tr>
                     <td>
                         {{$j->trackingTopic}}
@@ -133,7 +136,10 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
                         {{$j->trackStatusName}}
                     </td>
                     <td>
-                        {{$j->member_Person_personId_sender}}
+                        {{$j->personFirstName}}  {{$d->personLastName}}
+                    </td>
+                    <td>
+                        {{$j->trackingDeadline}}
                     </td>
                 </tr>
                 @endforeach

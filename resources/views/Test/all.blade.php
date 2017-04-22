@@ -5,7 +5,13 @@
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
   <meta name="generator" content="2017.0.1.363"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  
+  <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        
+
   <script type="text/javascript">
    // Update the 'nojs'/'js' class on the html node
 document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
@@ -18,8 +24,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="{{asset('css/site_global.css?crc=443350757/')}}"/>
   <link rel="stylesheet" type="text/css" href="{{asset('css/all.css?crc=4225037467')}}" id="pagesheet"/>
-  <script src="http://cdn.alloyui.com/3.0.1/aui/aui-min.js"></script>
-  <link href="http://cdn.alloyui.com/3.0.1/aui-css/css/bootstrap.min.css" rel="stylesheet"></link>
+  
    </head>
  <body>
 
@@ -115,10 +120,53 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
     </div>
    </div>
    <div class="grpelem" id="u5208"><!-- simple frame --></div>
-   <div id="myDiagramContainer">
-      <div id="myDiagramBuilder" style="height:100px;width:1000px;float:right;margin: 7.5% 3.5% 20% 10%"></div>
-   </div>
-  </div>
+   <main style="height:100px;width:1000px;float:right;margin: 7% 0% -10% 0%">
+       <div class="container">
+        <div class='row'>
+          <h3>FORM DOING CONTENT</h3>
+          <br>
+          <table class="table table-striped">
+           
+            <tr>
+                <th>
+                    TASK NAME
+                </th>
+                <th>
+                    Status
+                </th>
+                <th>
+                    PERSON-SENDER
+                </th>
+                <th>
+                    Deadline
+                </th>
+            </tr>
+            @if($alla != null)
+                @foreach($alla as $a) 
+                <tr>
+                    <td>
+                        {{$a->trackingTopic}}
+                    </td>
+                    <td>
+                        {{$a->trackStatusName}}
+                    </td>
+                    <td>
+                        {{$a->personFirstName}} {{$a->personLastName}}
+                    </td>
+                    <td>
+                        {{$a->trackingDeadline}}
+                    </td>
+                </tr>
+                @endforeach
+            @else
+                <p> no variable </p>
+            @endif
+        </table>
+        </div>
+        </div>  
+       
+   
+     </main>
  
   <script src="scripts/require.js?crc=4159430777" type="text/javascript" async data-main="scripts/museconfig.js?crc=172512987" onload="if (requirejs) requirejs.onError = function(requireType, requireModule) { if (requireType && requireType.toString && requireType.toString().indexOf && 0 <= requireType.toString().indexOf('#scripterror')) window.Muse.assets.check(); }" onerror="window.Muse.assets.check();"></script>
    

@@ -110,7 +110,7 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
            
             <tr>
                 <th>
-                    TASK NUM
+                    TASK NAME
                 </th>
                 <th>
                     STATUS
@@ -118,7 +118,33 @@ if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required
                 <th>
                     PERSON-SENDER
                 </th>
+                <th>
+                    DeadLine
+                </th>
             </tr>
+
+            @if($jan != null)
+            
+                @foreach($jan as $d)
+            
+                <tr>
+                    <td>
+                        {{$d->trackingTopic}}
+                    </td>
+                    <td>
+                        {{$d->trackStatusName}}
+                    </td>
+                    <td>
+                        {{$d->personFirstName}} {{$d->personLastName}}
+                    </td>
+                    <td>
+                        {{$d->trackingDeadline}}
+                    </td>
+                </tr>
+                @endforeach 
+            @else
+                <p> no variable </p>
+            @endif
         </table>
         </div>
         </div>  

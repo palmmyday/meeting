@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\tracking;
 use Illuminate\Http\Request;
 use DB;
+use Auth;
 use App\trackstatus;
 
 class DoingController extends Controller {
@@ -64,10 +65,45 @@ class DoingController extends Controller {
 		//$jan=tracking::all();
 		$jan=DB::table('tracking')
 			->join('trackstatus', 'tracking.trackStatus_trackStatusId', '=', 'trackstatus.trackStatusId')
+			->join('member','tracking.member_Person_personId_sender','=','member.Person_personId')
+			->join('person','member.Person_personId','=','person.personId')
 			->where('trackstatus.trackStatusName','=','TO DO')->get();
 		//$r= trackstatus::lists('trackStatusName','trackstatusId');
-		// dd($jan);
-		return view('Test.doing', ["jan" => $jan]);
+		//dd($jan);
+		return view('Test.to-do', ["jan" => $jan]);
+	}
+
+	public function show2()
+	{
+		$dum =DB::table('tracking')
+		->join('trackstatus', 'tracking.trackStatus_trackStatusId', '=', 'trackstatus.trackStatusId')
+		->join('member','tracking.member_Person_personId_sender','=','member.Person_personId')
+		->join('person','member.Person_personId','=','person.personId')
+		->where('trackstatus.trackStatusName','=','Done')->get();
+
+		$dam =DB::table('tracking')
+		->join('trackstatus', 'tracking.trackStatus_trackStatusId', '=', 'trackstatus.trackStatusId')
+		->join('member','tracking.member_Person_personId_receive','=','member.Person_personId')
+		->join('person','member.Person_personId','=','person.personId')
+		->where('trackstatus.trackStatusName','=','Done')->get();
+		return view('Test.done', ["dum" => $dum],["dam" => $dam]);
+	}
+
+	public function show3(){
+		$tod=DB::table('tracking')
+			->join('trackstatus', 'tracking.trackStatus_trackStatusId', '=', 'trackStatus.trackStatusId')
+			->join('member','tracking.member_Person_personId_receive','=','member.Person_personId')
+			->join('person','member.Person_personId','=','person.personId')
+			->where('trackstatus.trackStatusName','=', 'Doing')->get();
+			return view('Test.doing', ["tod" => $tod]);
+	}
+
+	public function show4(){
+		$alla=DB::table('tracking')
+			->join('trackstatus','tracking.trackStatus_trackStatusId','=','trackStatus.trackStatusId')
+			->join('member','tracking.member_Person_personId_receive','=','member.Person_personId')
+			->join('person','member.Person_personId','=','person.personId')->get();
+			return view('Test.all', ["alla" =>$alla]);
 	}
 
 	/**
@@ -76,6 +112,14 @@ class DoingController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
+	 public function getProfile(){
+		$id = Auth::tracking()->id;
+        $trackingStatus = tracking::where('trackingId',$id)->first();
+        if(!$trackingStatus) return redirect('admin/user/index');
+        $data = array('id' => $id,'trackingStatus' => $trackingStatus);
+        return view('admin.user.form',$data);
+
+	 }
 	public function edit($trackingId)
 	{
 		$obj = tracking::find($trackingId);
@@ -91,11 +135,8 @@ class DoingController extends Controller {
 	 */
 	public function update(Request $request,$trackingId)
 	{
-		$obj 			= tracking::find($trackingId);
-		$obj->topic 	= $request('Topic');
-		$obj->sender 	= $request('member_Person_personId_sender');
-		$obj->trackStatus_trackStatusId =1;
-		$obj->save();
+		
+    
 	}
 
 	/**

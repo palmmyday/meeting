@@ -15,21 +15,21 @@ Route::get('/', 'MyControllers@index');
 
 Route::get('home', 'MyControllers@index');
 
-Route::get('done', 'MyControllers@done');
+Route::get('done', 'DoingController@show2');
 
-Route::get('doing', 'DoingController@show');
+Route::get('doing', 'DoingController@show3');
 
 Route::get('home', 'MyControllers@index');
 
-Route::get('done', 'MyControllers@done');
+//Route::get('done', 'MyControllers@done');
 
-Route::get('all', 'Mycontrollers@all');
+Route::get('all', 'DoingController@show4');
 
-Route::get('to-do', 'MyControllers@todo');
+Route::get('to-do', 'DoingController@show');
 
-Route::get('Done', 'MyControllers@done2');
+//Route::get('Done', 'MyControllers@done2');
 
-Route::get('Doing', 'MyControllers@doing2');
+//Route::get('Doing', 'MyControllers@doing2');
 
 Route::get('index', 'MyControllers@index');
 
