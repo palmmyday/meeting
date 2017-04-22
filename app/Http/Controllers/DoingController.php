@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\tracking;
 use Illuminate\Http\Request;
 use DB;
+use App\trackstatus;
 
 class DoingController extends Controller {
 
@@ -60,14 +61,13 @@ class DoingController extends Controller {
 		//$obj['trackingId']=$trackingId;
 		
 		//$id= DB::table('tracking')->value('trackStatus_trackStatusId');
-		
-        $jan=tracking::all();
-		//$jan['status'] = DB::table('trackstatus')->join('tracking','trackstatusId','=','trackStatus_trackStatusId')->where('trackStatusName','=','Doing')->get();
-     	//dd($jan);
-	  	//$data['Status']= DB::table('trackstatus')
-                    //	->join('tracking','trackstatus.id','=','trackStatus_trackStatusId')
-                    //	->select('trackStatusName')->get();
-		return view('Test.doing', compact('jan'));
+		//$jan=tracking::all();
+		$jan=DB::table('tracking')
+			->join('trackstatus', 'tracking.trackStatus_trackStatusId', '=', 'trackstatus.trackStatusId')
+			->where('trackstatus.trackStatusName','=','TO DO')->get();
+		//$r= trackstatus::lists('trackStatusName','trackstatusId');
+		// dd($jan);
+		return view('Test.doing', ["jan" => $jan]);
 	}
 
 	/**

@@ -41,7 +41,7 @@ Route::get('meeting', 'MyControllers@meeting');
 
 Route::get('task', 'MyControllers@task');
 
-Route::get('stat', 'MyControllers@stat');
+Route::get('statistic', 'MyControllers@stat');
 
 Route::get('user', 'MyControllers@user');
 
